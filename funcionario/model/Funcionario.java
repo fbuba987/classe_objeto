@@ -5,10 +5,10 @@ public class Funcionario {
     private int id;
     private String nome;
     private String cidade;
-    private String cargo;
+    private int cargo;
     private float salario;
 
-    public Funcionario(int id, String nome, String cidade, String cargo, float salario) {
+    public Funcionario(int id, String nome, String cidade, int cargo, float salario) {
         this.id = id;
         this.nome = nome;
         this.cidade = cidade;
@@ -40,11 +40,11 @@ public class Funcionario {
         this.cidade = cidade;
     }
 
-    public String getCargo() {
+    public int getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(int cargo) {
         this.cargo = cargo;
     }
 
@@ -57,15 +57,20 @@ public class Funcionario {
     }
 
     public void visualizar(){
+
+        String cargo = "";
+        switch (this.cargo){
+            case 1:
+                cargo = "Gerente";
+                break;
+            case 2:
+                cargo = "Vendedor";
+        }
+
         System.out.println("***********************************" );
-        System.out.println("O ID: " + this.id);
-        System.out.println("***********************************");
-        System.out.println("O nome de cliente: " + getNome());
-        System.out.println("***********************************");
-        System.out.println("Cidade: " + getCidade());
-        System.out.println("***********************************");
-        System.out.println("Cargo: " + getCargo());
-        System.out.println("***********************************");
-        System.out.println("Salario: " + getSalario());
+        System.out.println("\nO ID: " + this.id);
+        System.out.println("\nO nome de cliente: " + getNome());
+        System.out.println("\nCidade: " + getCidade());
+        System.out.println("\nSalario: " + getSalario());
     }
 }

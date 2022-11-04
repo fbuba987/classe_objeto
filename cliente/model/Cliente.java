@@ -4,17 +4,17 @@ public class Cliente {
 
     private String nome;
     private int id;
-    private String cpf;
-    private String numero;
+    private String cidade;
+    private int numero;
     private String cep;
 
 
-    public Cliente(String nome, int id, String cpf, String numero, String cep) {
+    public Cliente(String nome, int id, String cidade, int numero, String cep) {
         this.nome = nome;
         this.id = id;
-        this.cpf = cpf;
         this.numero = numero;
         this.cep = cep;
+        this.cidade = cidade;
     }
 
     public String getNome() {
@@ -33,19 +33,19 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
@@ -58,15 +58,25 @@ public class Cliente {
     }
 
     public void visualizar(){
+
+        String numero = "";
+
+        switch (this.numero) {
+            case 1:
+                numero = "Pessoa Física";
+                break;
+            case 2:
+                numero = "Pessoa jurídica";
+                break;
+        }
+
         System.out.println("***********************************" );
         System.out.println("O nome: " + getNome());
         System.out.println("***********************************");
-        System.out.println("O numero de celular: " + getNumero());
-        System.out.println("***********************************");
         System.out.println("O numero cep: " + getCep());
         System.out.println("***********************************");
-        System.out.println("O numero CPF: " + getCpf());
-        System.out.println("***********************************");
         System.out.println("O ID: " + getId());
+        System.out.println("***********************************");
+        System.out.println("A sua cidade: " + getCidade());
     }
 }

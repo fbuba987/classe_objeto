@@ -1,14 +1,15 @@
 package cliente;
 
 import cliente.model.Cliente;
+import cliente.model.PessoaFisica;
+import cliente.model.PessoaJuridica;
 
 public class TestaCliente {
 
     public static void main(String[] args) {
-        Cliente c1 = new Cliente("Filipe", 123, "706.640.532-18", "(11) 97744-3333", "08690-732" );
-        Cliente c2 = new Cliente("Armando", 456, "706.640.532-16", "(11) 97744-4444", "08690-732" );
-
-        c1.visualizar();
-        c2.visualizar();
+        PessoaFisica p1 = new PessoaFisica("Filipe", 123, "Sao Paulo", 1, "45700000", "708.453.654-19");
+        PessoaJuridica pj1 = new PessoaJuridica("Armando", 321, "Mala", 2, "43900000", "808.453.654-19");
+        p1.visualizar();
+        pj1.visualizar();
     }
 }
